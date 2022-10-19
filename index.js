@@ -1,12 +1,12 @@
 import express from "express"
-import pg from 'pg'
-import { creds } from './creds.js'
+import pg from 'pg'//connect dbç
+import { creds } from './creds.js'//db
 
-const { Pool} = pg 
+const { Pool} = pg //db
 const app = express()
 
 app.get('/customers', async (req, res) => {
-    const pool = new Pool(creds)
+    const pool = new Pool(creds)//db
     const customers = await pool.query("SELECT * FROM customers")
     .catch(err => res.status(500).send(err))
     res.send(customers.rows)
