@@ -7,6 +7,6 @@ app.use(express.json())
 
 app.get('/customers', getAllCustomers)
 app.get('/customers/:customerId', getCustomerById)
-app.post('customers', addNewCustomer)
+app.post('/customers', addNewCustomer)
 
 app.listen(3030, () => console.log("listening on http://localhost:3030..."))
