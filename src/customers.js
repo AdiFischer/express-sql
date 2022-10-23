@@ -27,6 +27,6 @@ export async function addNewCustomer(req, res) {
     console.log(query)
     await pool.query(query)
         .catch(err => res.status(500).send(err))
-    res.status(201).send({ message: 'Customer succeccfully created'})
+    res.status(201).send({ message: 'Customer successfully created'})
     pool.end()
 }
